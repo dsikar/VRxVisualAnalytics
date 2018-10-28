@@ -92,7 +92,7 @@
 %\shortauthortitle{Firstauthor \MakeLowercase{\textit{et al.}}: Paper Title}
 
 %% Abstract section.
-\abstract{In this paper we look at published studies in the fields of virtual reality and visual analytics, particularly trajectories, which temporal and spatial movement data seem well suited for the emerging interdisciplinary field sometimes referred to as \textit{Immersive Analytics}. We look at use cases and techniques as well as general costs of these new lines of research and their commercial application, and how accessible the virtual reality techniques described are to the researcher. %
+\abstract{In this paper we look at published studies in the fields of virtual reality and visual analytics, particularly trajectories, which temporal and spatial movement data seem well suited for the emerging interdisciplinary field sometimes referred to as \textit{Immersive Analytics}. We look at use cases and techniques in academic and commercial applications, general costs of these new lines of research and how accessible the virtual reality techniques described are to the researcher. %
 } % end of abstract
 
 %% Keywords that describe your work. Will show as 'Index Terms' in journal
@@ -136,14 +136,18 @@
 %% ``\begin{document}'' command. It prepares and prints the title block.
 
 %% the only exception to this rule is the \firstsection command
+
 \firstsection{Introduction}
 
 \maketitle
 
-%% \section{Introduction} %for journal use above \firstsection{..} instead
-Since the field Visual Analytics was formally defined \cite{Fisher:2005}, \cite{KOHLHAMMER2011117}, the tools use to visualize data have evolved from desktop based to a new breed of virtual reality based apparatus which is some cases may facilitate the understanding as well as provide insights, into
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Using the Style Template}
+\input{template-1-introduction.tex}
+
+\section{Related work}
 
 \begin{itemize}
 \item If you receive compilation errors along the lines of ``\texttt{Package ifpdf Error: Name clash, \textbackslash ifpdf is already defined}'' then please add a new line ``\texttt{\textbackslash let\textbackslash ifpdf\textbackslash relax}'' right after the ``\texttt{\textbackslash documentclass[journal]\{vgtc\}}'' call. Note that your error is due to packages you use that define ``\texttt{\textbackslash ifpdf}'' which is obsolete (the result is that \texttt{\textbackslash ifpdf} is defined twice); these packages should be changed to use ifpdf package instead.
@@ -160,48 +164,9 @@ Since the field Visual Analytics was formally defined \cite{Fisher:2005}, \cite{
 DVI-based processes to compile the template apparently cannot handle the different font so, by default, the template file uses the \texttt{abbrv-doi} bibliography style but the compiled PDF shows you the effect of the \texttt{abbrv-doi-hyperref-narrow} style.
 \end{itemize}
 
-\section{Bibliography Instructions}
+\input{template-3-UseCasesAndTechniques.tex}
 
-\begin{itemize}
-\item Sort all bibliographic entries alphabetically but the last name of the first author. This \LaTeX/bib\TeX\ template takes care of this sorting automatically.
-\item Merge multiple references into one; e.\,g., use \cite{Max:1995:OMF,Kitware:2003} (not \cite{Kitware:2003}\cite{Max:1995:OMF}). Within each set of multiple references, the references should be sorted in ascending order. This \LaTeX/bib\TeX\ template takes care of both the merging and the sorting automatically.
-\item Verify all data obtained from digital libraries, even ACM's DL and IEEE Xplore  etc.\ are sometimes wrong or incomplete.
-\item Do not trust bibliographic data from other services such as Mendeley.com, Google Scholar, or similar; these are even more likely to be incorrect or incomplete.
-\item Articles in journal---items to include:
-  \begin{itemize}
-  \item author names
-	\item title
-	\item journal name
-	\item year
-	\item volume
-	\item number
-	\item month of publication as variable name (i.\,e., \{jan\} for January, etc.; month ranges using \{jan \#\{/\}\# feb\} or \{jan \#\{-{}-\}\# feb\})
-  \end{itemize}
-\item use journal names in proper style: correct: ``IEEE Transactions on Visualization and Computer Graphics'', incorrect: ``Visualization and Computer Graphics, IEEE Transactions on''
-\item Papers in proceedings---items to include:
-  \begin{itemize}
-  \item author names
-	\item title
-	\item abbreviated proceedings name: e.\,g., ``Proc.\textbackslash{} CONF\_ACRONYNM'' without the year; example: ``Proc.\textbackslash{} CHI'', ``Proc.\textbackslash{} 3DUI'', ``Proc.\textbackslash{} Eurographics'', ``Proc.\textbackslash{} EuroVis''
-	\item year
-	\item publisher
-	\item town with country of publisher (the town can be abbreviated for well-known towns such as New York or Berlin)
-  \end{itemize}
-\item article/paper title convention: refrain from using curly brackets, except for acronyms/proper names/words following dashes/question marks etc.; example:
-\begin{itemize}
-	\item paper ``Marching Cubes: A High Resolution 3D Surface Construction Algorithm''
-	\item should be entered as ``\{M\}arching \{C\}ubes: A High Resolution \{3D\} Surface Construction Algorithm'' or  ``\{M\}arching \{C\}ubes: A high resolution \{3D\} surface construction algorithm''
-	\item will be typeset as ``Marching Cubes: A high resolution 3D surface construction algorithm''
-\end{itemize}
-\item for all entries
-\begin{itemize}
-	\item DOI can be entered in the DOI field as plain DOI number or as DOI url; alternative: a url in the URL field
-	\item provide full page ranges AA-{}-BB
-\end{itemize}
-\item when citing references, do not use the reference as a sentence object; e.\,g., wrong: ``In \cite{Lorensen:1987:MCA} the authors describe \dots'', correct: ``Lorensen and Cline \cite{Lorensen:1987:MCA} describe \dots''
-\end{itemize}
-
-\section{Example Section}
+\section{Discussion}
 
 Lorem\marginpar{\small You can use the margins for comments while editing the submission, but please remove the marginpar comments for submission.} ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -382,24 +347,10 @@ Integer sit amet dolor sit amet turpis ullamcorper varius. Cras volutpat bibendu
 Mauris ut sapien non ipsum imperdiet sodales sit amet ac diam. Nulla vel convallis est. Etiam dapibus augue urna. Aenean enim leo, fermentum quis pulvinar at, ultrices quis enim. Sed placerat porta libero et feugiat. Phasellus ullamcorper, felis id porta sollicitudin, dolor dui venenatis augue, vel fringilla risus massa non risus. Maecenas ut nulla vitae ligula pharetra feugiat non eu ante. Donec quis neque quis lorem cursus pretium ac vulputate quam. Cras viverra tellus vitae sapien pretium laoreet. Pellentesque fringilla odio venenatis ex viverra, quis eleifend tortor ornare. Ut ut enim nunc. Vivamus id ligula nec est dignissim eleifend.
 
 Nunc ac velit tellus. Donec et venenatis mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae lectus vel ante mollis congue. Vestibulum at cursus velit. Curabitur in facilisis enim. Vestibulum eget dui aliquet risus laoreet laoreet. Phasellus et est id magna interdum venenatis. Donec luctus vehicula justo sed laoreet. Quisque tincidunt suscipit augue, in molestie sem accumsan sed.
-\section{Conclusion}
 
-In this literature review we looked at how the fields of Visual Analytics
-and Virtual Reality (including related fields such as Simulation, Interaction, Artificiality, Immersion, Telepresence, Full-Body Immersion, and Network Communication) can potentially merge to create a new field of study we propose as Virtual Analytics. We examined the current tools available
-sed diam voluptua. At vero eos et accusam et justo duo dolorsimulation, interaction, artificiality, immersion, telepresence, full-body immersion, and network communicationes et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum.
+\input{template-6-Conclusion.tex}
 
-Initiatives to bring together Visual Analytics and Virtual Reality \cite{Bach:2016:IAE:2992154.2996365}
-
+\section{Citations to use}
 We looked at the Unity3D platform and how they can bypass ArcGIS providing a lowering cost of entry to 3D rendering and animation \cite{5567608}
 
 A FRAMEWORK FOR LOW-COST MULTI-PLATFORM VR AND AR SITE EXPERIENCES \cite{Wallgrun:2017:FRA}
@@ -436,23 +387,6 @@ Ferreira et al propose an automatic microassembly system assisted by vision serv
  \caption{FromDaDy software screen capture showing connection tool for visual design and menu axis}
  \label{fig:sample}
 \end{figure}
-
-Challenges to Applying Virtual Reality Technology and Techniques to Visual Analytics \cite{May:1667670}
-QUOTE - TODO CHANGE
-However, visual analytics is focused on
-the analytical process not the tools and technology. As such, any new methods, techniques,
-and technologies need to show benefit to analysts working on real problems. Additionally,
-the majority of visual analytics research funding is not focused on disruptive physical interface
-technologies. Generally speaking, new technologies and techniques for visual analytics
-need to function within the current analytical environment.
-The purpose of this panel is to introduce the domain of visual analytics to the audience
-and explore how and where VR/AR research can be adapted for use in visual analytics.
-The panelists have been selected based on topic areas of research that have potential for
-near term insertion or impact on visual analytics. This panel will focus on the hard issues of
-defining what it will take to get VR technology introduced into the visual analytics research
-funding stream.
-
-evolution of visualtization methods, aid perceptual limitations involved in grasping large amounts of data.\cite{Olshannikova2015}
 
 Safety aspects of air traffic control, how to incorporate Augmented Reality to aid decison-making\cite{Vinot:2014:TAR:2637406.2627598}
 
@@ -505,8 +439,7 @@ Preferences with Low-Cost mobile VR\cite{Powell:7859536}
 
 
 %% if specified like this the section will be committed in review mode
-\acknowledgments{
-We wish to thank  Gennady and Natalia Andrienko for their guidance and Aidan Slingsby for the LaTex template used to write this literature review.}
+\input{template-7-acknowledgements.tex}
 
 %\bibliographystyle{abbrv}
 \bibliographystyle{abbrv-doi}
